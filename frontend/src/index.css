@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #f8f9fa;
+  color: #1f2937;
+  font-size: 13px;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── ReactFlow canvas ─────────────────────────────────────────────── */
+
+.react-flow {
+  background: #f8f9fa;
+}
+
+/* ── Edges ────────────────────────────────────────────────────────── */
+
+.react-flow__edge-path,
+.react-flow__edge-interaction {
+  stroke: #a1a1aa;
+  stroke-width: 1.5;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #217346;
+}
+
+/* Arrow marker color follows edge stroke via currentColor */
+.react-flow__edge .react-flow__arrowhead polyline,
+.react-flow__edge .react-flow__arrowhead path {
+  fill: #a1a1aa;
+  stroke: #a1a1aa;
+}
+
+.react-flow__edge.selected .react-flow__arrowhead polyline,
+.react-flow__edge.selected .react-flow__arrowhead path,
+.react-flow__edge:hover .react-flow__arrowhead polyline,
+.react-flow__edge:hover .react-flow__arrowhead path {
+  fill: #217346;
+  stroke: #217346;
+}
+
+.react-flow__connection-path {
+  stroke: #217346;
+  stroke-width: 1.5;
+}
+
+/* ── Handles ──────────────────────────────────────────────────────── */
+
+.react-flow__handle {
+  width: 9px;
+  height: 9px;
+  background: #9ca3af;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  transition: background 0.12s, transform 0.12s;
+}
+
+.react-flow__handle:hover,
+.react-flow__handle.connecting {
+  background: #217346;
+  transform: scale(1.25);
+}
+
+/* ── Controls ─────────────────────────────────────────────────────── */
+
+.react-flow__controls {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #e4e4e7;
+}
+
+.react-flow__controls-button {
+  background: #ffffff;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  color: #52525b;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none;
+}
+
+.react-flow__controls-button:hover {
+  background: #f4f4f5;
+}
+
+.react-flow__controls-button svg {
+  fill: #52525b;
+}
+
+/* ── Minimap ──────────────────────────────────────────────────────── */
+
+.react-flow__minimap {
+  border: 1px solid #e4e4e7;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ── Misc ─────────────────────────────────────────────────────────── */
+
+.react-flow__attribution {
+  display: none;
+}
+
+/* Selection box */
+.react-flow__selection {
+  background: rgba(33, 115, 70, 0.04);
+  border: 1px dashed rgba(33, 115, 70, 0.35);
+  border-radius: 2px;
+}
+
+/* ── Scrollbars ───────────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
