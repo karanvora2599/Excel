@@ -1,36 +1,6 @@
 import { Handle, Position, type NodeProps } from '@xyflow/react'
 import type { FlowNode } from '../../store/workflowStore'
-
-const CATEGORY_COLOR: Record<string, string> = {
-  excel_input:        '#217346',
-  csv_input:          '#217346',
-  excel_output:       '#0f6cbf',
-  csv_output:         '#0f6cbf',
-  filter_rows:        '#c47b1c',
-  sort_rows:          '#c47b1c',
-  remove_duplicates:  '#c47b1c',
-  top_n_rows:         '#c47b1c',
-  group_by:           '#7719aa',
-  join_tables:        '#7719aa',
-  append_tables:      '#7719aa',
-  lookup:             '#7719aa',
-  add_column:         '#6352a8',
-  conditional_column: '#6352a8',
-  split_column:       '#6352a8',
-  merge_columns:      '#6352a8',
-  date_extract:       '#6352a8',
-  fill_missing:       '#0078d4',
-  replace_values:     '#0078d4',
-  standardize_case:   '#0078d4',
-  trim_text:          '#0078d4',
-  change_data_type:   '#0078d4',
-  rename_columns:     '#0078d4',
-  select_columns:     '#0078d4',
-  drop_columns:       '#0078d4',
-  find_duplicates:    '#c50f1f',
-  find_missing:       '#c50f1f',
-  validate_regex:     '#c50f1f',
-}
+import { CATEGORY_COLOR } from '../../constants/nodeColors'
 
 const NODE_ABBR: Record<string, string> = {
   excel_input:        'XLS',

@@ -11,6 +11,7 @@ import {
 } from '@xyflow/react'
 import { useWorkflowStore, type FlowNode } from '../store/workflowStore'
 import GridFlowNode from './canvas/GridFlowNode'
+import { CATEGORY_COLOR } from '../constants/nodeColors'
 
 const nodeTypes = { gridflowNode: GridFlowNode }
 
@@ -73,14 +74,7 @@ export default function NodeCanvas() {
         <Controls position="bottom-right" />
         <MiniMap
           style={{ background: '#ffffff', border: '1px solid #e4e7eb' }}
-          nodeColor={(n: FlowNode) => {
-            const s = n.data?.status
-            if (s === 'ok')      return '#217346'
-            if (s === 'error')   return '#c50f1f'
-            if (s === 'stale')   return '#ca5010'
-            if (s === 'running') return '#0078d4'
-            return '#d1d5db'
-          }}
+          nodeColor={(n: FlowNode) => CATEGORY_COLOR[n.data?.nodeType] ?? '#d1d5db'}
           maskColor="rgba(248,249,250,0.7)"
         />
 
